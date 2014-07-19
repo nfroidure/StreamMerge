@@ -1,0 +1,51 @@
+{
+  "name": "streammerge",
+  "version": "0.0.1",
+  "description": "Merge given streams once they are readable ensuring their content integrity.",
+  "homepage": "https://github.com/nfroidure/StreamMerge",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests/*.mocha.js",
+    "coveralls": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- tests/*.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "cover": "./node_modules/istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha -- tests/*.mocha.js -R spec -t 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nfroidure/StreamMerge"
+  },
+  "keywords": [
+    "queue",
+    "streaming",
+    "stream",
+    "async",
+    "pipe"
+  ],
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "event-stream": "~3.1.5",
+    "mocha-lcov-reporter": "0.0.1",
+    "istanbul": "~0.3.0",
+    "coveralls": "~2.11.1"
+  },
+  "author": {
+    "name": "Nicolas Froidure",
+    "url": "http://www.insertafter.com/blog.html"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/nfroidure/StreamMerge/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/nfroidure/StreamMerge/issues"
+  },
+  "dependencies": {
+    "readable-stream": "^1.0.27-1",
+    "streamqueue": "0.1.1",
+    "isstream": "^0.1.0"
+  }
+}
